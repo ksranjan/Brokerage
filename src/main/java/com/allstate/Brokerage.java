@@ -19,10 +19,14 @@ public class Brokerage {
         return name;
     }
 
+    public void addClient(Brokerage broker, Client client) {
+        broker.listOfClients.add(client);
+    }
+
     public static void main(String[] args) {
         Brokerage broker = new Brokerage("ZeroDHA");
         Client client = new Client("Anjesh", "male", 25);
-        broker.listOfClients.add(client);
+        broker.addClient(client);
         client.deposit(4000);
         Portfolio portfolio = client.createPortfolio("Technology");
         Portfolio portfolio1 = client.createPortfolio("Electronics");
